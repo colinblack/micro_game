@@ -8,13 +8,12 @@ import (
 	repository "github.com/micro_game/user_service/repo"
 )
 
-
 func main() {
 	repo := &repository.UserRepository{}
 
 	srv := micro.NewService(
 		micro.Name("micrograms.service.user"),
-		micro.Version("latest"),  // 新增接口版本参数
+		micro.Version("latest"), // 新增接口版本参数
 	)
 	srv.Init()
 

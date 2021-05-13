@@ -5,7 +5,6 @@ import (
 	"github.com/micro_game/user_service/model"
 )
 
-
 type Repository interface {
 	Create(user *model.User) error
 	GetAll() ([]*model.User, error)

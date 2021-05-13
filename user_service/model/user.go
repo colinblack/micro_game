@@ -5,15 +5,16 @@ import (
 	pb "github.com/micro_game/user_service/proto/user"
 	"strconv"
 )
+
 type User struct {
 	gorm.Model
-	Name string  `gorm:"type:varchar(100)"`
-	Email string `gorm:"type:varchar(100);unique_index"`
-	Password string
-	Status uint8 `gorm:"default:1"`
-	StripeId string
-	CardBrand string
-	CardLastFour string
+	Name          string `gorm:"type:varchar(100)"`
+	Email         string `gorm:"type:varchar(100);unique_index"`
+	Password      string
+	Status        uint8 `gorm:"default:1"`
+	StripeId      string
+	CardBrand     string
+	CardLastFour  string
 	RememberToken string
 }
 

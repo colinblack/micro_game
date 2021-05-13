@@ -3,6 +3,7 @@ syntax = "proto3";
 package microgames.service.user;
 
 service UserService {
+    rpc Login(Request) returns (LoginResponse){}
     rpc Create(User) returns (Response) {}
     rpc GetAll(Request) returns (Response) {}
 }
@@ -20,6 +21,14 @@ message User {
     string remember_token = 10;
     string created_at = 11;
     string updated_at = 12;
+}
+
+message LoginResponse{
+    int32 flag = 1;
+    int32 cur_pt = 2;
+    int64 currenttime = 3;
+    int32 access_port = 4;
+    int32 serverid = 5;
 }
 
 message Request {}

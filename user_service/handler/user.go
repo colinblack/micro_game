@@ -7,7 +7,9 @@ import (
 	"github.com/micro_game/user_service/repo"
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/net/context"
+	"time"
 )
+
 type UserService struct {
 	Repo repo.Repository
 }
@@ -39,5 +41,15 @@ func (srv *UserService) Create(ctx context.Context, req *pb.User, res *pb.Respon
 		return err
 	}
 	res.User, _ = user.ToProtobuf()
+	return nil
+}
+
+func (srv *UserService) Login(ctx context.Context, req *pb.Request, res *pb.LoginResponse) error {
+	res.Flag = 1
+	res.CurPt = 0
+	res.Currenttime = time.Now().Unix()
+	res.AccessPort = 8001
+	res.Serverid = 1
+
 	return nil
 }
