@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/micro/go-micro"
-	m "github.com/micro_game/gateway/model"
+	m "github.com/micro_game/http_gate/model"
 	user "github.com/micro_game/user_service/proto/user"
 )
 
@@ -29,7 +29,7 @@ func (srv *User) Create(ctx context.Context, req *user.User, rsp *user.Response)
 
 func main() {
 	service := micro.NewService(
-		micro.Name("go.micro.api.gateway"), //这里服务名前缀必须是go.micro.api
+		micro.Name("go.micro.api.http-gate"), //这里服务名前缀必须是go.micro.api
 	)
 
 	service.Init()
@@ -40,6 +40,6 @@ func main() {
 	)
 
 	if err := service.Run(); err != nil {
-		fmt.Println("gateway error")
+		fmt.Println("http_gate error")
 	}
 }
