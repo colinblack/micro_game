@@ -1,11 +1,15 @@
 package main
 
 import (
-	"fmt"
 	"github.com/micro/go-micro"
 	m "github.com/micro_game/http_gate/model"
 	user "github.com/micro_game/user_service/proto/user"
+	"log"
 )
+
+//运行方式
+//先运行micro api --handler=api
+//在运行程序
 
 /*type User struct {
 	U user.UserServiceClient
@@ -40,6 +44,6 @@ func main() {
 	)
 
 	if err := service.Run(); err != nil {
-		fmt.Println("http_gate error")
+		log.Fatal("http_gate error", err)
 	}
 }

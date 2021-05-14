@@ -1,0 +1,16 @@
+package test;
+syntax = "proto3";
+
+message info{
+    string id = 1;
+}
+
+message info1{
+    string id = 1;
+}
+
+message info2{
+    string id = 1;
+}
+
+
