@@ -40,6 +40,9 @@ func hi(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+
+
+
 func main() {
 	service := web.NewService(
 		web.Name("go.micro.web.websocket"),
@@ -53,7 +56,6 @@ func main() {
 	if err := service.Run(); err != nil {
 		log.Fatal("Run: ", err)
 	}
-
 
 }
 

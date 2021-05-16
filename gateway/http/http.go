@@ -1,8 +1,8 @@
-package main
+package http
 
 import (
 	"github.com/micro/go-micro"
-	m "github.com/micro_game/http_gate/model"
+	"github.com/micro_game/gateway/http/model"
 	user "github.com/micro_game/user_service/proto/user"
 	"log"
 )
@@ -39,7 +39,7 @@ func main() {
 	service.Init()
 	service.Server().Handle(
 		service.Server().NewHandler(
-			&m.User{U: user.NewUserServiceClient("micrograms.service.user", service.Client())},
+			&model.User{U: user.NewUserServiceClient("micrograms.service.user", service.Client())},
 		),
 	)
 
